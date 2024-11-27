@@ -10,7 +10,7 @@
 html{
   scroll-behavior: smooth;
 }
-
+/* h-[200vh] -将高度设置为视口高度的200% */
 body{
   @apply bg-zinc-900 text-zinc-50
 }
