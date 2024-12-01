@@ -4,6 +4,8 @@
  */
 import Header from './components/Header.jsx'
 import Main from './components/Main.jsx'
+import About from './components/About.jsx'
+
 
 
 const App = () => {
@@ -12,6 +14,7 @@ const App = () => {
       <Header />
       <main>
         <Main />
+        <About />
       </main>
     </>
   )
