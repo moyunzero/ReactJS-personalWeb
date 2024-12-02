@@ -7,7 +7,7 @@ import Main from './components/Main.jsx'
 import About from './components/About.jsx'
 import Skill from './components/Skill.jsx'
 import Work from './components/Work.jsx'
-
+import Review from './components/Review.jsx'
 
 
 const App = () => {
@@ -19,6 +19,7 @@ const App = () => {
         <About />
         <Skill />
         <Work />
+        <Review />
       </main>
     </>
   )
