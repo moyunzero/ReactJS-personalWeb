@@ -9,6 +9,7 @@ import Skill from './components/Skill.jsx'
 import Work from './components/Work.jsx'
 import Review from './components/Review.jsx'
 import Contact from './components/Contact.jsx'
+import Footer from './components/Footer.jsx'
 
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
         <Review />
         <Contact />
       </main>
+      <Footer />
     </>
   )
 }
