@@ -38,10 +38,10 @@ const Contact = () =>{
             <div className="container lg:grid lg:grid-cols-2 lg:items-stretch">
                  
                 <div className="mb-12 lg:mb-0 lg:flex lg:flex-col">
-                    <h2 className="headline-2 lg:max-w-[12ch]">
+                    <h2 className="headline-2 lg:max-w-[12ch] reveal-up">
                         联系吗？
                     </h2>
-                    <p className="text-zinc-400 mt-3 mb-8 max-w-[50ch] la:max-w-[30ch]">
+                    <p className="text-zinc-400 mt-3 mb-8 max-w-[50ch] la:max-w-[30ch] reveal-up">
                         如果你有任何问题或建议，欢迎与我联系
                     </p>
                     <div className="flex items-center gap-2 mt-auto">
@@ -50,7 +50,7 @@ const Contact = () =>{
                                 key={key}
                                 href={href}
                                 target="_blank"
-                                className="w-12 h-12 grid place-items-center ring-inset ring-2 ring-zinc-50/5 rounded-lg transition-[background-color,color] hover:bg-zinc-50 hover:text-zinc-950 active:bg-zinc-50/80"
+                                className="w-12 h-12 grid place-items-center ring-inset ring-2 ring-zinc-50/5 rounded-lg transition-[background-color,color] hover:bg-zinc-50 hover:text-zinc-950 active:bg-zinc-50/80 reveal-up"
                             >
                                 {icon}
                             </a>
@@ -66,7 +66,7 @@ const Contact = () =>{
                         <div className="mb-4">
                             <label
                                 htmlFor="name"
-                                className="label"
+                                className="label reveal-up"
                             >
                                 Name
                             </label>
@@ -74,7 +74,7 @@ const Contact = () =>{
                                 type="text"
                                 name="name"
                                 id="name"
-                                className="text-field"
+                                className="text-field reveal-up"
                                 autoComplete="name"
                                 required
                                 placeholder="Enter your name"
@@ -83,7 +83,7 @@ const Contact = () =>{
                         <div className="mb-4">
                             <label
                                 htmlFor="email"
-                                className="label"
+                                className="label reveal-up"
                             >
                                 Email
                             </label>
@@ -91,7 +91,7 @@ const Contact = () =>{
                                 type="email"
                                 name="email"
                                 id="email"
-                                className="text-field"
+                                className="text-field reveal-up"
                                 autoComplete="email"
                                 required
                                 placeholder="Enter your email"
@@ -102,14 +102,14 @@ const Contact = () =>{
                     <div className="mb-4">
                         <label
                             htmlFor="message"
-                            className="label"
+                            className="label reveal-up"
                         >
                             Message
                         </label>
                         <textarea
                             name="message"
                             id="message"
-                            className="text-field resize-y min-h-32 max-h-80"
+                            className="text-field resize-y min-h-32 max-h-80 reveal-up"
                             required
                             placeholder="Enter your message"
                         ></textarea>
@@ -117,7 +117,7 @@ const Contact = () =>{
 
                     <button
                         type="submit"
-                        className="btn btn-primary [&]:max-w-full w-full justify-center"
+                        className="btn btn-primary [&]:max-w-full w-full justify-center reveal-up"
                     >
                         Submit
                     </button>
