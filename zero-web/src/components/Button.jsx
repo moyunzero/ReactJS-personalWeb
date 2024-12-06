@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
  * ButtonPrimary 
  */
 
-
 const ButtonPrimary = ({
     href,
     target ='_self',
@@ -55,7 +54,6 @@ ButtonPrimary.propTypes = {
  * ButtonOutline
  */
 
-
 const ButtonOutline = ({
     href,
     target ='_self',
@@ -101,7 +99,6 @@ ButtonOutline.propTypes = {
     icon: PropTypes.string,
     classes: PropTypes.string
 }
-
 
 export{
     ButtonPrimary,

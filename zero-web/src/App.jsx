@@ -23,12 +23,9 @@ import Review from './components/Review.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
 
-
 const App = () => {
-
   useGSAP(() => {
     const elements= gsap.utils.toArray('.reveal-up');
-
     elements.forEach(element => {
       gsap.to(element,{
         scrollTrigger:{

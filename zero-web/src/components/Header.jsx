@@ -4,13 +4,11 @@
  */
 import { useState } from "react";
 
-
 /**
  * 
  * Components
  */
 import Navbar from "./Navbar";
-
 
 /**
  * Header Component

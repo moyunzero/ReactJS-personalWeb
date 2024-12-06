@@ -3,7 +3,6 @@
  */
 import ProjectCard from "./ProjectCard";
 
-
 const works = [
     {
       imgSrc: '/images/project-1.jpg',
@@ -68,7 +67,7 @@ const Work =()=>{
                 }
             </div>
         </div>
-    </section>
+      </section>
     )
 }
 

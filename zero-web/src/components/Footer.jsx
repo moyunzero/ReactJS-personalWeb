@@ -26,7 +26,7 @@ const sitemap = [
     }
   ];
   
-  const socials = [
+const socials = [
     {
       label: 'GitHub',
       href: 'https://www.github.com/codewithsadee-org'
@@ -53,9 +53,7 @@ const Footer = () => {
     return (
         <footer className="section">
             <div className="container">
-
                 <div className="lg:grid lg:grid-cols-2">
-
                     <div className="mb-10">
                         <h2 className="headline-1 mb-8 lg:max-w-[12ch] reveal-up">
                             一起创造更好的未来
@@ -67,9 +65,7 @@ const Footer = () => {
                             classes="reveal-up"
                         />
                     </div>
-
                     <div className="grid grid-cols-2 gap-4 lg:pl-20">
-
                         <div>
                             <p className="mb-2 reveal-up">
                                 Sitemap
@@ -89,7 +85,6 @@ const Footer = () => {
                                 }
                             </ul>
                         </div>
-
                         <div>
                             <p className="mb-2 reveal-up">
                                 Socials
@@ -110,11 +105,8 @@ const Footer = () => {
                                 }
                             </ul>
                         </div>
-
                     </div>
-
                 </div>
-
                 <div className="flex items-center justify-between pt-10 mb-8">
                     <a
                         href="/"

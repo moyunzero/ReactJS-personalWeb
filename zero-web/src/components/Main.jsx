@@ -3,8 +3,6 @@
  */
 import { ButtonPrimary, ButtonOutline } from "./Button"
 
-
-
 const Main = () => {
     return (
         <section
@@ -24,7 +22,6 @@ const Main = () => {
                                 className="img-cover"
                             />
                         </figure>
-
                         <div className="flex items-center gap-1.5 text-zinc-400 text-sm tracking-wide">
                             <span className="relative w-2 h-2 rounded-full bg-emerald-400">
                                 <span className="absolute inset-0 rounded-full bg-emerald-400 animate-ping"></span>   
@@ -48,7 +45,6 @@ const Main = () => {
                         />
                     </div>
                 </div>
-            
                 <div className="hidden lg:block">
                     <figure className="w-full max-w-[480px] ml-auto bg-gradient-to-t from-sky-400 via-25% via-sky-400/40 to-65% rounded-[60px] overflow-hidden">
                         <img
@@ -61,7 +57,6 @@ const Main = () => {
                     </figure>
                 </div>
             </div>
-              
         </section>
     )
 }

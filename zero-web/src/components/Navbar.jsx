@@ -7,17 +7,14 @@ import PropTypes from 'prop-types';
 const Navbar = ({navOpen}) => {
     const lastActiveLink = useRef();
     const activeBox = useRef();
-    
     const initAcitveBox = () =>{
       activeBox.current.style.left = lastActiveLink.current.offsetLeft + 'px';
       activeBox.current.style.top = lastActiveLink.current.offsetTop + 'px';
       activeBox.current.style.width = lastActiveLink.current.offsetWidth + 'px';
       activeBox.current.style.height = lastActiveLink.current.offsetHeight + 'px';
     }
-
     useEffect(initAcitveBox,[])
     window.addEventListener('resize',initAcitveBox);  
-
     const activeCurrentLink =(event)=>{
         lastActiveLink.current?.classList.remove('active');
         event.target.classList.add('active');
@@ -27,7 +24,6 @@ const Navbar = ({navOpen}) => {
         activeBox.current.style.width = event.target.offsetWidth + 'px';
         activeBox.current.style.height = event.target.offsetHeight + 'px';
     }
-
     const navItems = [
         {
           label: 'Home',
@@ -80,7 +76,6 @@ const Navbar = ({navOpen}) => {
        </nav>
     )
 }
-
 Navbar.propTypes = {
     navOpen: PropTypes.bool.isRequired
 }

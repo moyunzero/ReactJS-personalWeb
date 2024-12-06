@@ -3,7 +3,6 @@
  */
 import PropTypes from "prop-types";
 
-
 const ProjectCard = ({
     imgSrc,
     title,
@@ -21,7 +20,6 @@ const ProjectCard = ({
                     className="img-cover"
                 />
             </figure>
-
             <div className="flex items-center justify-between gap-4">
                 <div>
                     <h3 className="title-1 mb-3">
@@ -38,7 +36,6 @@ const ProjectCard = ({
                         ))}
                     </div>
                 </div>
-
                 <div className="w-11 h-11 rounded-lg grid place-items-center bg-sky-400 text-zinc-950 shrink-0">
                     <span
                         className="material-symbols-rounded"
@@ -48,13 +45,11 @@ const ProjectCard = ({
                     </span>
                 </div>
             </div>
-
             <a
                 href={projectLink}
                 target="_blank"
                 className="absolute inset-0"
             >
-
             </a>
         </div>
     )

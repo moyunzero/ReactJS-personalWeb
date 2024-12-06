@@ -5,7 +5,6 @@ ratings.fill({
     icon: 'star',
     style: { fontVariationSettings: '"FILL" 1' }
 })
-
 const ReviewCard = ({
     content,
     name,
@@ -51,7 +50,6 @@ const ReviewCard = ({
         </div>
     )
 }
-
 ReviewCard.propTypes = {
     content: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,

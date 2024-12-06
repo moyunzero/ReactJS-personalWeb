@@ -55,7 +55,6 @@ const reviews = [
   ];
 
 const Review = () => {
-
     useGSAP(() => {
       gsap.to('.scrub-slide',{
         scrollTrigger:{
@@ -69,7 +68,6 @@ const Review = () => {
         duration:1
       })
     })
-
     return (
         <section 
             id="reviews"
@@ -79,7 +77,6 @@ const Review = () => {
                 <h2 className="headline-2 mb-8 reveal-up">
                     客户评价??    
                 </h2>  
-
                 <div className="scrub-slide flex items-stretch gap-3 w-fit">
                     {reviews.map(({ content, name, imgSrc, company},key )=>(
                         <ReviewCard  
