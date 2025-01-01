@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import BlogNavbar from '../components/BlogNavbar';
+import BlogNavbar from '../components/blog/BlogNavbar';
 
 const Blog = () => {
     return (

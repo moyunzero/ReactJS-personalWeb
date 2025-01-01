@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
  * 
  * Components
  */
-import Navbar from "./Navbar";
+import Navbar from './Navbar';
 
 /**
  * Header Component
@@ -17,7 +17,7 @@ import Navbar from "./Navbar";
  * - 小屏幕（<768px）：Flex布局，元素水平排列
  * - 中等屏幕（≥768px）：Grid布局，1:3:1 三列布局
  */
-const Header =()=>{
+const Header = () => {
     const [navOpen, setNavOpen] = useState(false);
 
     const handleContactClick = (e) => {
@@ -87,4 +87,5 @@ const Header =()=>{
        </header>
     )
 }
-export default Header
+
+export default Header;

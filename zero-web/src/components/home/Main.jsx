@@ -1,7 +1,7 @@
 /**
  * Components
  */
-import { ButtonPrimary, ButtonOutline } from "./Button"
+import { ButtonPrimary, ButtonOutline } from "../common/Button"
 
 const Main = () => {
     return (
