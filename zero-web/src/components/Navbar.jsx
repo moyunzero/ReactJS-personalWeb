@@ -1,83 +1,105 @@
 /**
  * Node Modules
  */
-import { useRef, useEffect } from 'react'
 import PropTypes from 'prop-types';
+import { Link, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
-const Navbar = ({navOpen}) => {
-    const lastActiveLink = useRef();
-    const activeBox = useRef();
-    const initAcitveBox = () =>{
-      activeBox.current.style.left = lastActiveLink.current.offsetLeft + 'px';
-      activeBox.current.style.top = lastActiveLink.current.offsetTop + 'px';
-      activeBox.current.style.width = lastActiveLink.current.offsetWidth + 'px';
-      activeBox.current.style.height = lastActiveLink.current.offsetHeight + 'px';
-    }
-    useEffect(initAcitveBox,[])
-    window.addEventListener('resize',initAcitveBox);  
-    const activeCurrentLink =(event)=>{
-        lastActiveLink.current?.classList.remove('active');
-        event.target.classList.add('active');
-        lastActiveLink.current = event.target;
-        activeBox.current.style.left = event.target.offsetLeft + 'px';
-        activeBox.current.style.top = event.target.offsetTop + 'px';
-        activeBox.current.style.width = event.target.offsetWidth + 'px';
-        activeBox.current.style.height = event.target.offsetHeight + 'px';
-    }
+const Navbar = ({navOpen, setNavOpen}) => {
+    const location = useLocation();
     const navItems = [
         {
-          label: 'Home',
-          link: '#home',
-          className: 'nav-link active',
-          ref: lastActiveLink
+            label: '首页',
+            href: 'home'
         },
         {
-          label: 'About',
-          link: '#about',
-          className: 'nav-link'
+            label: '关于',
+            href: 'about'
         },
         {
-          label: 'Work',
-          link: '#work',
-          className: 'nav-link'
+            label: '技能',
+            href: 'skill'
         },
         {
-          label: 'Reviews',
-          link: '#reviews',
-          className: 'nav-link'
+            label: '作品',
+            href: 'work'
         },
         {
-          label: 'Contact',
-          link: '#contact',
-          className: 'nav-link md:hidden'
+            label: '评价',
+            href: 'review'
+        },
+        {
+            label: '联系',
+            href: 'contact'
+        },
+        {
+            label: '博客',
+            href: '/blog',
+            isRoute: true
         }
-      ];
+    ];
+
+    // 处理路由中的hash
+    useEffect(() => {
+        if (location.hash) {
+            const id = location.hash.replace('#', '');
+            const element = document.getElementById(id);
+            if (element) {
+                setTimeout(() => {
+                    const offset = element.offsetTop - 80;
+                    window.scrollTo({
+                        top: offset,
+                        behavior: 'smooth'
+                    });
+                }, 0);
+            }
+        }
+    }, [location]);
+
+    const handleScroll = (e, href) => {
+        e.preventDefault();
+        setNavOpen(false);
+        
+        const element = document.getElementById(href);
+        if (element) {
+            const offset = element.offsetTop - 80;
+            window.scrollTo({
+                top: offset,
+                behavior: 'smooth'
+            });
+        }
+    };
 
     return (
-       <nav className={'navbar' + (navOpen ? ' active' : '')}>
-            {
-                navItems.map(({label,link,className,ref},key)=>(
-                    <a 
+        <nav className={'navbar' + (navOpen ? ' active' : '')}>
+            {navItems.map(({label, href, isRoute}, key) => (
+                isRoute ? (
+                    <Link
                         key={key}
-                        href={link}
-                        className={className}
-                        ref={ref}
-                        onClick={activeCurrentLink}
+                        to={href}
+                        className="nav-link"
+                        onClick={() => setNavOpen(false)}
+                    >
+                        {label}
+                    </Link>
+                ) : (
+                    <a
+                        key={key}
+                        href={`#${href}`}
+                        className="nav-link"
+                        onClick={(e) => handleScroll(e, href)}
                     >
                         {label}
                     </a>
-                ))
-            }
-            <div 
-                className='active-box'
-                ref={activeBox}
-            >
-            </div>
-       </nav>
+                )
+            ))}
+        </nav>
     )
 }
-Navbar.propTypes = {
-    navOpen: PropTypes.bool.isRequired
-}
 
-export default Navbar
+Navbar.propTypes = {
+    navOpen: PropTypes.bool.isRequired,
+    setNavOpen: PropTypes.func.isRequired
+};
+
+export default Navbar;

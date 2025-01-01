@@ -70,7 +70,7 @@ const Review = () => {
     })
     return (
         <section 
-            id="reviews"
+            id="review"
             className="section overflow-hidden"
         >
             <div className="container">

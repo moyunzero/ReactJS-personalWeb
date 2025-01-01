@@ -3,6 +3,7 @@
  * Node Modules
  */
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 /**
  * 
@@ -19,6 +20,18 @@ import Navbar from "./Navbar";
 const Header =()=>{
     const [navOpen, setNavOpen] = useState(false);
 
+    const handleContactClick = (e) => {
+        e.preventDefault();
+        const element = document.getElementById('contact');
+        if (element) {
+            const offset = element.offsetTop - 80;
+            window.scrollTo({
+                top: offset,
+                behavior: 'smooth'
+            });
+        }
+    };
+
     return(
        <header className="fixed top-0 left-0 w-full h-20 flex items-center z-40 bg-gradient-to-b from-zinc-900 to-zinc-900/0">
             {/* 
@@ -33,17 +46,17 @@ const Header =()=>{
             <div className="max-w-screen-xl mx-auto w-full px-4 flex justify-between items-center md:px-6 md:grid md:grid-cols-[1fr,3fr,1fr]">
                 {/* Logo区域 - 第一列 (1fr) */}
                 <h1>
-                    <a 
-                        href="/" 
+                    <Link 
+                        to="/" 
                         className="logo"
                     >
                         <img 
-                            src="./public/images/logo.svg"
+                            src="/images/logo.svg"
                             width={40} 
                             height={40} 
                             alt="墨韵-作品集"
                         />
-                    </a>
+                    </Link>
                 </h1>
 
                 {/* 导航区域 - 第二列 (3fr) 
@@ -53,19 +66,20 @@ const Header =()=>{
                 <div className="relative md:justify-self-center">
                     <button
                         className="menu-btn md:hidden" 
-                        onClick={()=> setNavOpen((prev)=>!prev)}
+                        onClick={() => setNavOpen((prev) => !prev)}
                     >
                         <span className="material-symbols-rounded">
                             {navOpen ? 'close' : 'menu'}
                         </span>
                     </button>
-                    <Navbar navOpen={navOpen}/>
+                    <Navbar navOpen={navOpen} setNavOpen={setNavOpen}/>
                 </div>
 
                 {/* 联系按钮 - 第三列 (1fr) */}
                 <a 
                     href="#contact"  
                     className="btn btn-secondary max-md:hidden md:justify-self-end"
+                    onClick={handleContactClick}
                 >
                     联系我
                 </a>
