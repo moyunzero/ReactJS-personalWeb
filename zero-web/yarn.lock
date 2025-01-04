@@ -1832,11 +1832,6 @@ keyv@^4.5.4:
   dependencies:
     json-buffer "3.0.1"
 
-lenis@^1.1.18:
-  version "1.1.18"
-  resolved "https://registry.npmmirror.com/lenis/-/lenis-1.1.18.tgz"
-  integrity sha512-hBJVN0o7ZWt6DqyLoCkYKLffgCqywX0Gf/ZWhWC8Ths1zN/lZHoAMC3faFjaTxnOEKokeV0q1Mlyu1aUr18xFQ==
-
 levn@^0.4.1:
   version "0.4.1"
   resolved "https://registry.npmmirror.com/levn/-/levn-0.4.1.tgz"
