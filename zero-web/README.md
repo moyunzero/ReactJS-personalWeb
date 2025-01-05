@@ -1,108 +1,150 @@
-# 个人网站项目
+# 墨韵 - 个人网站
 
-基于 React 18 和 Vite 构建的现代化个人网站，展示作品集、博客和个人技能。
+基于 React 18 和 Vite 构建的现代化个人网站，展示作品集、博客和个人技能。项目采用最新的前端技术栈，注重性能优化和用户体验。
 
-## 技术栈
+## 🚀 技术栈
 
-- React 18
-- Vite
-- React Router
-- TailwindCSS
-- GSAP (动画)
-- Lenis (平滑滚动)
+- **核心框架**: React 18
+- **构建工具**: Vite
+- **路由管理**: React Router v7
+- **样式解决方案**: TailwindCSS
+- **动画效果**: GSAP
+- **滚动优化**: Lenis
+- **代码规范**: ESLint
+- **类型检查**: PropTypes
 
-## 项目结构
+## 📁 项目结构
 
 ```
 zero-web/
 ├── src/
-│   ├── assets/            # 静态资源
+│   ├── assets/            # 静态资源（图片、字体等）
 │   ├── components/        # 组件目录
-│   │   ├── common/       # 公共组件
-│   │   └── home/         # 页面组件
+│   │   ├── common/       # 通用组件
+│   │   └── home/         # 首页相关组件
 │   ├── constants/        # 常量配置
-│   │   └── styles.js     # 样式常量
+│   │   └── styles.js     # 样式常量（颜色、间距、字体等）
 │   ├── hooks/            # 自定义 Hooks
-│   │   ├── useScrollToTop.js
-│   │   └── useMediaQuery.js
+│   │   ├── useScrollToTop.js  # 滚动处理
+│   │   └── useMediaQuery.js   # 响应式布局
 │   ├── layouts/          # 布局组件
 │   ├── pages/            # 页面组件
-│   ├── routes/           # 路由配置
-│   ├── utils/            # 工具函数
+│   │   ├── Home.jsx     # 首页
+│   │   └── Blog.jsx     # 博客页
+│   ├── routes/          # 路由配置
+│   ├── utils/           # 工具函数（防抖、节流等）
 │   ├── App.jsx          # 应用入口
 │   └── main.jsx         # 主入口文件
 ```
 
-## 特性
+## ✨ 核心特性
 
-- 🚀 基于 Vite 的快速开发体验
-- 📱 响应式设计，适配多端
-- 🎨 现代化的 UI 设计
-- ⚡️ 优化的性能表现
-- 🔍 SEO 友好
-- 🛠 完善的开发工具链
+- 🎯 **性能优化**
+  - 路由懒加载
+  - 组件记忆化
+  - 图片懒加载
+  - 滚动性能优化
 
-## 开始使用
+- 📱 **响应式设计**
+  - 移动端优先
+  - 断点管理
+  - 媒体查询封装
 
-1. 克隆项目
+- 🎨 **现代化 UI**
+  - TailwindCSS 样式
+  - GSAP 动画
+  - 平滑滚动
+  - 主题定制
+
+- 🛡️ **可靠性**
+  - 错误边界处理
+  - PropTypes 类型检查
+  - 统一的错误处理
+  - 加载状态反馈
+
+## 🚀 快速开始
+
+1. **克隆项目**
 ```bash
 git clone [repository-url]
 cd zero-web
 ```
 
-2. 安装依赖
+2. **安装依赖**
 ```bash
 yarn install
 ```
 
-3. 开发环境运行
+3. **开发环境运行**
 ```bash
 yarn dev
 ```
 
-4. 生产环境构建
+4. **生产环境构建**
 ```bash
 yarn build
 ```
 
-## 环境变量配置
+## ⚙️ 环境配置
 
 在项目根目录创建 `.env` 文件：
 
 ```env
+# API配置
 VITE_API_URL=http://localhost:3000
+
+# 环境标识
 VITE_ENV=development
-VITE_APP_TITLE=个人网站
+
+# 应用配置
+VITE_APP_TITLE=墨韵
 VITE_APP_DESCRIPTION=展示作品、博客和技能的个人网站
 ```
 
-## 开发指南
+## 📖 开发指南
 
-### 组件开发
+### 组件开发规范
 - 使用函数组件和 Hooks
-- 遵循 React 最佳实践
+- 必要时使用 React.memo() 优化性能
 - 使用 PropTypes 进行类型检查
-- 组件文件使用 JSX 扩展名
+- 组件文件使用 .jsx 扩展名
+- 遵循单一职责原则
 
-### 样式开发
-- 使用 TailwindCSS 进行样式开发
-- 遵循 BEM 命名规范
-- 使用 constants/styles.js 中的预定义样式
+### 样式开发规范
+- 优先使用 TailwindCSS 类名
+- 遵循 styles.js 中的预定义常量
+- 使用语义化的类名
+- 保持样式的可复用性
 
-### 工具函数
-- 使用 utils 目录中的防抖和节流函数
+### 性能优化实践
+- 合理使用 React.lazy() 和 Suspense
+- 使用 useCallback 和 useMemo 优化性能
+- 图片使用 loading="lazy" 属性
+- 使用防抖和节流控制事件频率
+
+### 工具函数使用
+- 从 utils/index.js 导入通用函数
+- 使用 JSDoc 注释保持文档完整性
 - 遵循函数式编程原则
-- 使用 JSDoc 注释
+- 保持函数的纯粹性
 
-## 部署
+## 🔧 构建部署
 
-1. 构建项目
+1. **构建项目**
 ```bash
 yarn build
 ```
 
-2. 将 `dist` 目录部署到服务器
+2. **预览构建结果**
+```bash
+yarn preview
+```
 
-## 许可证
+3. **部署**
+- 将 `dist` 目录部署到服务器
+- 确保服务器配置了正确的路由重定向
+- 配置适当的缓存策略
+
+## 📄 许可证
 
 MIT
